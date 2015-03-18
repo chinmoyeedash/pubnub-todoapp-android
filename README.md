@@ -18,7 +18,7 @@ The apk package for this app is available on the following link. Transfer the pa
 3. Tasks added by one user will be synced in real time on the other users' app window if they are logged in.
 4. Users can add tasks, modify a task's information or makr a task as complete. All operations on tasks are automagically synced up across all logged in users.
 
-#STORTCOMINGS
+#SHORTCOMINGS
 1. This is a demo app so the usernames and project is predefined and hard coded in the app.
 2. All users must be logged in to get the task updates from other users. The app does not support data sync for users who log in at a later point of time.
 
