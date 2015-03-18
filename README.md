@@ -16,10 +16,10 @@ https://github.com/chinmoyeedash/pubnub-todoapp-android/blob/master/bin/ToDo.apk
 Transfer the package onto your phone and follow the standard insructions to install it.
 
 ##USAGE
-1. The App allows the user to login as one of the three predefined usernames (Eric, Peter and Sam).
-2. Once logged in the user can start adding tasks by clicking on the new task icon. All tasks are added to a predefined project.
-3. Tasks added by one user will be synced in real time on the other users' app window if they are logged in.
-4. Users can add tasks, modify a task's information or makr a task as complete. All operations on tasks are automagically synced up across all logged in users.
+1. The App allows the user to login as one of the three predefined usernames (Eric, Peter and Sam). Launch the app from two or three different phones by logging in with one of the predefined users.
+2. Once logged in, the user can start adding tasks by clicking on the new task icon. All tasks are added to a predefined project.
+3. All tasks added or modified by any one of the users will be  updated on the other users' app window to allow seamless collaboration.
+4. Users can add tasks, modify a task's information or mark a task as complete. All operations on tasks are automagically synced up across all logged in users.
 
 ##SHORTCOMINGS
 1. This is a demo app so the usernames and project is predefined and hard coded in the app.
