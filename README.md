@@ -3,7 +3,7 @@ Collaborative ToDo App for Android using PubNub
 
 ##INTRODUCTION
 This is a sample android application which demonstrates a minimal ToDo App. This app levarages the facilities of PubNub 
-Realtime Data Stream Network and PubNUb's Android SDK to facilitate communication between different instances of the App thereby allowing collaboration among the users.
+Realtime Data Stream Network and PubNub's Android SDK to facilitate communication between different instances of the App thereby allowing collaboration among the users.
 
 
 ##ANDROID VERSION
