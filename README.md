@@ -6,8 +6,8 @@ This is a sample android application which demonstrates a minimal ToDo App. This
 Realtime Data Stream Network and PubNUb's Android SDK to facilitate communication between different instances of the App thereby allowing collaboration among the users who use the App for collaborating on a project.
 
 
-##PRECONDITION
-This app is tested on the Android 4.4.2 & 4.2 
+##ANDROID VERSION
+This app is tested on the Android 4.4.2 & 4.2 (Kitkat) only.  
 
 ##INSTALLATION
 The apk package for this app is available on the following link.
@@ -24,6 +24,7 @@ Transfer the package onto your phone and follow the standard insructions to inst
 ##SHORTCOMINGS
 1. This is a demo app so the usernames and project is predefined and hard coded in the app.
 2. All users must be logged in to get the task updates from other users. The app does not support data sync for users who log in at a later point of time.
+3. The App is tested only on Android Kitkat. A sollow on update will be done in a few days to test it for Lolipop.
 
 
 
