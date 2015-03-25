@@ -46,7 +46,7 @@ public class ModifyTaskUI extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_modifytaskui);
 
-		collaborator=getIntent().getStringExtra("collaborator");
+		
 		action=getIntent().getStringExtra("action");
 		tasktext=(TextView) findViewById(R.id.task);
 		descrtext=(TextView) findViewById(R.id.descrtext);
@@ -70,10 +70,10 @@ public class ModifyTaskUI extends Activity {
 			descrtext.setText(task.getDescription());
 			checkBox.setChecked(task.getStatus());
 			int child=spinner.getCount();
-			Log.d(TAG," child="+child);
+			
 			int ownerpos=0;
 			for (int x=0;x<child;x++) {
-				Log.d(TAG," child="+child);
+			
 				String item=spinner.getItemAtPosition(x).toString();
 				Log.d(TAG," item="+item);
 				if (item.equalsIgnoreCase(task.getOwner())) {
@@ -81,13 +81,11 @@ public class ModifyTaskUI extends Activity {
 					Log.d(TAG," ownerpos "+ownerpos);
 
 				}
-				Log.d(TAG," ownerpos "+ownerpos);
+				
 			}
 			spinner.setSelection(ownerpos);
-			Log.d(TAG," task owner"+task.getOwner());
-			//	Log.d(TAG," task "+newtask.toString());
-
-			if (!(collaborator.equalsIgnoreCase(task.getOwner().toString()))) {
+			
+			if (!(Globalvars.getCollaborator().equalsIgnoreCase(task.getOwner().toString()))) {
 				descrtext.setEnabled(false);
 				checkBox.setEnabled(false);
 				spinner.setEnabled(false);

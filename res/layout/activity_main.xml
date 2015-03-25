@@ -10,28 +10,6 @@
     android:background="@color/greenblue" >
 
     <TextView
-        android:id="@+id/tododemotextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="@string/ToDoDemo"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:background="@color/lightblue"
-        style="@style/textviewstyle"
-        android:padding="5dp"
-        android:gravity="center_horizontal" />
-
-    <Button
-        android:id="@+id/submitbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="72dp"
-        android:text="@string/submit"
-        style="@style/darkbtn" />
-
-    <TextView
         android:id="@+id/selecttextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,11 +21,36 @@
 
     <Spinner
         android:id="@+id/collaboratorspinner"
+        style="@style/spinnerstyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/selecttextView"
-        android:layout_marginTop="16dp"
-        android:entries="@array/collaborators"
-        style="@style/spinnerstyle" />
+        android:layout_marginTop="45dp"
+        android:entries="@array/collaborators" />
+
+    <TextView
+        android:id="@+id/tododemotextView"
+        style="@style/textviewstyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/selecttextView"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="45dp"
+        android:background="@color/lightblue"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:text="@string/ToDoDemo"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/submitbutton"
+        style="@style/darkbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="62dp"
+        android:text="@string/submit" />
     
 </RelativeLayout>

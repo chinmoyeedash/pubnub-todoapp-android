@@ -1,8 +1,9 @@
 package com.example.todo;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,27 +14,26 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 	String collaborator;
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+	
 		Spinner spinner=(Spinner)findViewById(R.id.collaboratorspinner);
-
-			Button submit=(Button) findViewById(R.id.submitbutton);
-			
+		Button submit=(Button) findViewById(R.id.submitbutton);
 			spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 				@Override
 					public void  onItemSelected(AdapterView<?> parent, View view,int pos, long id) {
 						collaborator=(parent.getItemAtPosition(pos).toString());
+						Log.d("MainActivity"," collaborator "+collaborator);
+						Globalvars.setCollaborator(collaborator);
 					}
 					@Override
 					public void onNothingSelected(AdapterView<?> parent) {
-						
 					}
 				});	
 			submit.setOnClickListener(new OnClickListener() {
@@ -41,11 +41,9 @@ public class MainActivity extends ActionBarActivity {
 				@Override
 				public void onClick(View v) {
 					Intent intent=new Intent(MainActivity.this,AppUI.class);
-					intent.putExtra("collaborator", collaborator);
 					startActivity(intent);
 				}
 			});
-			
 	}
 	
 	@Override
@@ -79,4 +77,14 @@ public class MainActivity extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
+	@Override
+	public void onBackPressed() {
+		Intent intent = new Intent(Intent.ACTION_MAIN);
+		intent.addCategory(Intent.CATEGORY_HOME);
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		startActivity(intent);
+		
+	}
+	
 }

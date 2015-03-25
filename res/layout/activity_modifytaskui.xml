@@ -2,8 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     android:layout_marginLeft="20dp"
-         android:layout_marginRight="20dp" >
+     android:paddingLeft="20dp"
+         android:paddingRight="20dp"
+         android:background="@color/lightblue" >
 
     <TextView
         android:id="@+id/task"
@@ -14,7 +15,7 @@
         android:layout_marginTop="25dp"
         android:text="Text"
         style="@style/textviewstyle"
-        android:background="@color/greenblue"
+        
         android:gravity="center_horizontal"
         android:textSize="25sp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -63,7 +64,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/ownerspinner"
-        android:layout_marginTop="17dp" />
+        android:layout_marginTop="17dp" 
+        style="@style/darkbtn"/>
 
     <EditText
         android:id="@+id/descrtext"

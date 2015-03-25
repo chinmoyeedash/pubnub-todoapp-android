@@ -1104,7 +1104,7 @@ containing a value of this type.
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
         public static final int checkbox=0x7f05002d;
-        public static final int collaboratorspinner=0x7f050047;
+        public static final int collaboratorspinner=0x7f050046;
         public static final int collaboratortextView=0x7f05003e;
         public static final int collapseActionView=0x7f05000d;
         public static final int default_activity_button=0x7f050028;
@@ -1149,14 +1149,14 @@ containing a value of this type.
         public static final int search_plate=0x7f050036;
         public static final int search_src_text=0x7f050037;
         public static final int search_voice_btn=0x7f05003b;
-        public static final int selecttextView=0x7f050046;
+        public static final int selecttextView=0x7f050044;
         public static final int shortcut=0x7f05002e;
         public static final int showCustom=0x7f050007;
         public static final int showHome=0x7f050004;
         public static final int showTitle=0x7f050006;
         public static final int split_action_bar=0x7f05001e;
         public static final int submit_area=0x7f050039;
-        public static final int submitbutton=0x7f050045;
+        public static final int submitbutton=0x7f050047;
         public static final int tabMode=0x7f050002;
         public static final int task=0x7f050048;
         public static final int taskbutton=0x7f050043;
@@ -1167,7 +1167,7 @@ containing a value of this type.
         public static final int textView5=0x7f050040;
         public static final int textView7=0x7f05003f;
         public static final int title=0x7f05002b;
-        public static final int tododemotextView=0x7f050044;
+        public static final int tododemotextView=0x7f050045;
         public static final int todotextView=0x7f05003d;
         public static final int top_action_bar=0x7f050020;
         public static final int up=0x7f050021;
@@ -2664,7 +2664,7 @@ containing a value of this type.
          */
         public static final int[] MenuView = {
             0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e,
-            0x0101012f, 0x01010130, 0x01010131, 0x01010435
+            0x0101012f, 0x01010130, 0x01010131, 0x0101052f
         };
         /**
           <p>

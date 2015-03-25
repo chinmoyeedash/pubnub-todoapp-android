@@ -12,10 +12,18 @@ import com.pubnub.api.Pubnub;
 public class Globalvars  {
 	
 	private static final String TAG = "Globalvars";
+	static String collaborator;
+	public static String getCollaborator() {
+		return collaborator;
+	}
+
+	public static void setCollaborator(String collaborator) {
+		Globalvars.collaborator = collaborator;
+	}
 	private String lastupdatetime;
-	private Integer taskcnt=0;
+	static Integer taskcnt=0,donetaskcnt=0;
 	private static Globalvars instance;
-	private static Globalvars globalvars;
+	static Boolean isSubscribed;
 	static Pubnub pubnub;
 	static String PUBLISH_KEY = "demo";
     static String SUBSCRIBE_KEY = "demo";	
@@ -44,20 +52,24 @@ public class Globalvars  {
 	public Integer getTaskcnt() {
 		return this.taskcnt;
 	}
-	public  void incrTaskcnt() {
-		this.taskcnt++;
-		Log.d(TAG,"Taskcnt incr to "+this.taskcnt); 
+	
+	
+	public  void updateTaskcnt() {
+		taskcnt=0;donetaskcnt=0;
+		for(Task task:  this.tasks) {
+			taskcnt++;
+			if (task.status) {
+				donetaskcnt++;
+			}
+		}
+		Log.d(TAG,"Taskcnt incr to "+taskcnt); 
+		
 	}
 	
 	public void editTask(Task edittask) {
-		
-		
-		
 		ListIterator<Task> iter = (ListIterator<Task>) tasks.listIterator();
-
 		while (iter.hasNext()) {
 		    Task t = iter.next();
-
 		    if (t.getId()==edittask.getId()) {
 				Log.d("Globalvars", "Editing task "+t.toString());
 				int index=this.tasks.indexOf(t);
@@ -67,14 +79,14 @@ public class Globalvars  {
 				iter.add(edittask);
 				Log.d("Globalvars", "tasks after Editing "+tasks.toString());
 			}
-		        
 		}
-		
 	}
 	 public static synchronized Globalvars getInstance(){
 	     if(instance==null){
 	    	Log.d(TAG,"Creating new instance"); 
 	    	instance=new Globalvars();
+	    	pubnub=new Pubnub("demo", "demo",false);
+	    	isSubscribed=false;
 	    	
 	     }
 			Log.d(TAG,"returning old instance");
