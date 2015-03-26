@@ -45,7 +45,7 @@
         </receiver>
 		<receiver android:name=".ToDoReceiver"
 		     android:enabled="true"
-    android:exported="true" >
+    		android:exported="true" >
 		    <intent-filter>
 		        <action android:name="pubnub.android.todo.MESSAGE"/>
 		    </intent-filter>

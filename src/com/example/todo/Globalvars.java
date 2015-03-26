@@ -27,7 +27,7 @@ public class Globalvars  {
 	static Pubnub pubnub;
 	static String PUBLISH_KEY = "demo";
     static String SUBSCRIBE_KEY = "demo";	
-    
+    private static boolean activityVisible;
 	private ArrayList<Task> tasks=new ArrayList<Task>();
 	
 	// Restrict the constructor from being instantiated
@@ -92,5 +92,19 @@ public class Globalvars  {
 			Log.d(TAG,"returning old instance");
 	     return instance;
 	 }
+	 
+	 public static boolean isActivityVisible() {
+		    return activityVisible;
+		  }  
+
+		  public static void activityResumed() {
+		    activityVisible = true;
+		  }
+
+		  public static void activityPaused() {
+		    activityVisible = false;
+		  }
+
+		 
 	 
 }

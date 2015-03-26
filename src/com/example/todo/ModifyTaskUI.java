@@ -55,7 +55,7 @@ public class ModifyTaskUI extends Activity {
 		adapterOwners = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, owners);
 		spinner.setAdapter(adapterOwners);
-		spinner.setSelection(adapterOwners.getPosition(collaborator));
+		spinner.setSelection(adapterOwners.getPosition(Globalvars.getCollaborator()));
 
 		Button button=(Button) findViewById(R.id.addmodifytaskbutton); 
 		if (action.equalsIgnoreCase("add")) 

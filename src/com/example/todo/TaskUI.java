@@ -1,16 +1,11 @@
 package com.example.todo;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Locale;
 
 import android.app.Activity;
+import android.app.NotificationManager;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,12 +18,11 @@ import android.widget.TextView;
 import com.pubnub.api.Callback;
 import com.pubnub.api.Pubnub;
 import com.pubnub.api.PubnubError;
-import com.pubnub.api.PubnubException;
 
 public class TaskUI extends Activity {
 
 	private static final String TAG = "TaskUI";
-	private static final String PREFS_NAME = "subscribed";
+	
 	private static final String channel = "todochannel";
 	String action;
 	String collaborator;
@@ -40,19 +34,18 @@ public class TaskUI extends Activity {
 	protected int requestcode,index;
 	private Pubnub pubnub=Globalvars.pubnub;;
 	TextView tasklistheader;
-	
-	private ArrayList<Task> taskslist;
-	//	BroadcastReceiver receiver;
 	private static Globalvars globalvars;
-	static String PUBLISH_KEY = "demo";
-	static String SUBSCRIBE_KEY = "demo";	
-	Boolean isSubscribed;
+	
+	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-
+		  // Create Notification Manager
+        NotificationManager notificationmanager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        // Dismiss Notification
+        notificationmanager.cancel(0);
 		setContentView(R.layout.activity_taskui);
 		Log.i("TaskUI", "PubNub Activity Started!");
 		globalvars=Globalvars.getInstance();
@@ -165,10 +158,12 @@ public class TaskUI extends Activity {
 
 	@Override
 	protected void onResume() {
-		Log.d(TAG,"Calling onresume, issubscribed=" +Globalvars.isSubscribed.toString());
+
 		if (!Globalvars.isSubscribed) {
-		subscribe();
-		}
+			subscribe();
+			}
+		Globalvars.activityResumed();
+		Log.d(TAG,"Calling onresume, issubscribed=" +Globalvars.isSubscribed.toString());
 		tasks=globalvars.getTasks();
 		Log.d(TAG,"Calling onresume" +tasks.toString());
 		taskAdapter = new TaskAdapter(TaskUI.this,R.id.list_item, tasks);
@@ -185,6 +180,12 @@ public class TaskUI extends Activity {
 		startService(serviceIntent);
 	}
 
+
+	@Override
+	protected void onPause() {
+		Globalvars.activityPaused();
+		super.onPause();
+	}
 	
 
 }
