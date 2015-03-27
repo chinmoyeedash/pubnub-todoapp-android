@@ -7,7 +7,7 @@ Realtime Data Stream Network and PubNub's Android SDK to facilitate communicatio
 
 
 ##ANDROID VERSION
-This app is tested on the Android Kitkat & Lolipop.  
+This app is tested on the Android Kitkat & Lollipop.  
 
 ##INSTALLATION
 The latest version of this app is available on the below GitHub Release page.
